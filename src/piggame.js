@@ -74,16 +74,21 @@ btnHold.addEventListener("click", function () {
 
 //The Newgame button
 btnNewGame.addEventListener("click", function () {
+  //reset scores and current scores
   score1.textContent = 0;
   score2.textContent = 0;
   currentScore1.textContent = 0;
   currentScore2.textContent = 0;
-  document.querySelector(`.player${activePlayer}`).style.backgroundColor =
-    "black";
+  currentScore = 0;
+
+  //reset styles
   document.querySelector(`.winner${activePlayer}`).classList.add("hidden");
   player1.style.backgroundColor = "#db095d";
   player1.style.color = "black";
-  player.style.color = "black";
-
+  player2.style.color = "black";
   player2.style.backgroundColor = "#de3e7e";
+
+  // Set active player and playing status
+  activePlayer = 1;
+  playing = true;
 });
