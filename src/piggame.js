@@ -14,7 +14,7 @@ const player2 = document.querySelector(".player2");
 
 score1.textContent = 0;
 score2.textContent = 0;
-const scores = [0, 0, 0];
+let scores = [0, 0, 0];
 let currentScore = 0;
 let activePlayer = 1;
 let playing = true;
@@ -75,20 +75,19 @@ btnHold.addEventListener("click", function () {
 //The Newgame button
 btnNewGame.addEventListener("click", function () {
   //reset scores and current scores
-  score1.textContent = 0;
-  score2.textContent = 0;
+
   currentScore1.textContent = 0;
   currentScore2.textContent = 0;
+  score1.textContent = 0;
+  score2.textContent = 0;
+  scores = [0, 0, 0];
   currentScore = 0;
-
+  activePlayer = 1;
+  playing = true;
   //reset styles
   document.querySelector(`.winner${activePlayer}`).classList.add("hidden");
   player1.style.backgroundColor = "#db095d";
   player1.style.color = "black";
   player2.style.color = "black";
   player2.style.backgroundColor = "#de3e7e";
-
-  // Set active player and playing status
-  activePlayer = 1;
-  playing = true;
 });
